@@ -39,16 +39,7 @@ cd book-buddy-binder
 npm install
 ```
 
-### 3⃣ Set up environment variables  
-Create a `.env.local` file and add the required credentials:
-
-```env
-DATABASE_URL=your_database_url
-NEXTAUTH_SECRET=your_secret
-NEXT_PUBLIC_API_URL=your_api_url
-```
-
-### 4⃣ Run the development server
+###  3⃣  Run the development server
 ```bash
 npm run dev
 ```
@@ -76,7 +67,5 @@ vercel
 📧 [ Twitter/X ](https://x.com/ezeslucky)
 🌐 [Your Portfolio](https://ezesluckytop.vercel.app/)  
 
----
 
-> *Happy Reading! 📚✨*
 
