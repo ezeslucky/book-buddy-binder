@@ -47,7 +47,7 @@ const BookForm = ({ initialData, onSubmit, isSubmitting }: BookFormProps) => {
       author: initialData?.author || "",
       description: initialData?.description || "",
       coverUrl: initialData?.coverUrl || "",
-      genre: initialData?.genre || "",
+      genre: initialData?.genre || undefined,
       publishYear: initialData?.publishYear,
       pagesCount: initialData?.pagesCount,
       isRead: initialData?.isRead || false,

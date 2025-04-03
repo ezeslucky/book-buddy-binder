@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Book } from "@/lib/types";
@@ -31,7 +30,6 @@ const Dashboard = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
 
-  // Check if user is logged in
   useEffect(() => {
     const storedUser = localStorage.getItem("bookBuddy_user");
     if (!storedUser) {
@@ -61,11 +59,9 @@ const Dashboard = () => {
     loadBooks();
   }, [navigate, toast]);
 
-  // Apply filters and sorting when books or filter options change
   useEffect(() => {
     let result = [...books];
     
-    // Apply search filter
     if (searchTerm) {
       const lowercaseSearch = searchTerm.toLowerCase();
       result = result.filter(
@@ -74,19 +70,16 @@ const Dashboard = () => {
       );
     }
     
-    // Apply genre filter
     if (genreFilter) {
       result = result.filter(book => book.genre === genreFilter);
     }
     
-    // Apply read status filter
     if (readFilter === "read") {
       result = result.filter(book => book.isRead);
     } else if (readFilter === "unread") {
       result = result.filter(book => !book.isRead);
     }
     
-    // Apply sorting
     result = result.sort((a, b) => {
       switch (sortOption) {
         case "title":
@@ -210,9 +203,9 @@ const Dashboard = () => {
                     <SelectValue placeholder="All Genres" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="">All Genres</SelectItem>
+                    <SelectItem value="all_genres">All Genres</SelectItem>
                     {uniqueGenres.map(genre => (
-                      <SelectItem key={genre} value={genre || ""}>
+                      <SelectItem key={genre} value={genre || "unknown"}>
                         {genre}
                       </SelectItem>
                     ))}
@@ -265,7 +258,6 @@ const Dashboard = () => {
         </div>
       </main>
       
-      {/* Modals */}
       {isAddModalOpen && (
         <AddBookModal 
           isOpen={isAddModalOpen}
