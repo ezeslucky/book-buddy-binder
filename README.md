@@ -30,7 +30,7 @@ Book Buddy Binder is a **modern book management platform** designed to help user
 
 ### 1⃣ Clone the repository
 ```bash
-git clone https://github.com//book-buddy-binder.git
+git clone https://github.com/ezeslucky/book-buddy-binder.git
 cd book-buddy-binder
 ```
 
